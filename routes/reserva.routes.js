@@ -26,7 +26,7 @@ router.get("/crear/reserva", (req, res) => {
   });
 // Formulario para actualizar una reserva
 router.get("/reserva/editar/:id", (req, res) => {
-    res.render("reserva/editar_persona", { id: req.params.id });
+    res.render("editar_reserva", { id: req.params.id });
   });
   
 // ==========================================
