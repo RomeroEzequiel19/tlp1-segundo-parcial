@@ -1,0 +1,80 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="row">
+      <div class="col-md-3">
+        <a href="/" id="btnRegresar" class="btn btn-sm btn-primary mb-3"
+          >Regresar</a
+        >
+      </div>
+    </div>
+    <div class="mx-auto col-sm-9 col-md-6 col-lg-5 col-xl-4">
+      <form action="#" id="formNuevaReserva" class="rounded border p-3">
+        <h3 class="mb-3 text-center bg-primary text-light rounded p-2">
+          Nueva Reserva
+        </h3>
+        <div class="mb-3">
+          <label for="nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombres" name="nombres" />
+        </div>
+        <div class="mb-3">
+          <label for="nombres" class="form-label">apellidos</label>
+          <textarea
+            class="form-control"
+            id="apellidos"
+            name="apellidos"
+            rows="1"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="dni" class="form-label">dni</label>
+          <input type="number" class="form-control" id="dni" name="dni" />
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Telefono</label>
+          <input
+            type="number"
+            class="form-control"
+            id="telefono"
+            name="telefono"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="estado" class="form-label">estado</label>
+          <input
+            type="number"
+            class="form-control"
+            id="estado"
+            name="estado"
+            value="1"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cod_reserva" class="form-label">Codigo reserva</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cod_reserva"
+            name="cod_reserva"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="titulo" class="form-label">fecha_reserva</label>
+          <input
+            type="date"
+            class="form-control"
+            id="fecha_reserva"
+            name="fecha_reserva"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/crear_reserva.js"></script>
+
+<%- include('partials/footer') %>

@@ -27,7 +27,45 @@ ctrlReservas.obtenerReservas = async (req, res) => {
     }
   };
 // Obtener una reserva
+
 // Crear una reserva
+ctrlReservas.crearReserva = async (req, res) => {
+    const {
+        nombres,
+        apellidos,
+        dni,
+        telefono,
+        estado,
+        cod_reserva,
+        fecha_reserva
+    } = req.body;
+  
+    try {
+      const reservas = await Reserva.create({
+        nombres,
+        apellidos,
+        dni,
+        telefono,
+        estado,
+        cod_reserva,
+        fecha_reserva
+      });
+  
+      if (!reservas) {
+        throw {
+          status: 400,
+          message: "No se pudo crear la Persona",
+        };
+      }
+  
+      return res.json(reservas);
+    } catch (error) {
+      return res
+        .status(error.status || 500)
+        .json(error.message || "Error interno del servidor");
+    }
+  };
+  
 // Actualizar una reserva
 // Eliminar una reserva de forma lógica
 

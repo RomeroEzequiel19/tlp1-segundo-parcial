@@ -4,6 +4,7 @@ const router = require('express').Router();
 
 const {
     obtenerReservas,
+    crearReserva
    
   } = require("../controllers/reserva.controllers");
 
@@ -19,8 +20,8 @@ router.get('/',(req,res)=>{
     res.render('index')
 });
 // Formulario para crear una reserva
-router.get("/reserva/crear", (req, res) => {
-    res.render("reservas/crear_reserva");
+router.get("/crear/reserva", (req, res) => {
+    res.render("crear_reserva");
   });
 // Formulario para actualizar una reserva
 router.get("/reserva/editar/:id", (req, res) => {
@@ -38,11 +39,11 @@ router.get("/api/reserva", obtenerReservas);
 // //Obtener una reserva
 // router.get("/api/reserva/:id", obtenerReserva);
  
-// // Crear una reserva
-// router.post("/api/reserva", crearReserva);
+// Crear una reserva
+router.post("/api/reserva", crearReserva);
  
 // // Actualizar una reserva
-// router.put("/api/reservaa/:id", actualizarReserva);
+// router.put("/api/reserva/:id", actualizarReserva);
  
 // // Eliminar una reserva de forma lógica
 // router.delete("/api/reserva/:id", eliminarReserva);
