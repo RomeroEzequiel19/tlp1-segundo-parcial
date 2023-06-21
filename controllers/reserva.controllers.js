@@ -9,7 +9,9 @@ const Reserva = require("../models/Reserva");
 ctrlReservas.obtenerReservas = async (req, res) => {
     try {
       const Reservas = await Reserva.findAll({
-       
+            where: {
+              estado: 1,
+            },
       });
   
       if (!Reservas || Reservas.length === 0) {
@@ -68,5 +70,39 @@ ctrlReservas.crearReserva = async (req, res) => {
   
 // Actualizar una reserva
 // Eliminar una reserva de forma lógica
+
+ctrlReservas.eliminarReserva = async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      const reservaEliminada = await Reserva.update(
+        {
+          estado: 2,
+        },
+        {
+          where: {
+            id: id,
+           
+          },
+        }
+      );
+  
+      if (!reservaEliminada) {
+        throw {
+          status: 400,
+          message: "No se pudo eliminar la reserva",
+        };
+      }
+  
+      return res.json({
+        reservaEliminada,
+        message: "Reserva eliminada correctamente",
+      });
+    } catch (error) {
+      return res
+        .status(error.status || 500)
+        .json(error.message || "Error interno del servidor");
+    }
+  };
 
 module.exports = ctrlReservas;

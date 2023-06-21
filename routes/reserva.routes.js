@@ -4,7 +4,8 @@ const router = require('express').Router();
 
 const {
     obtenerReservas,
-    crearReserva
+    crearReserva,
+    eliminarReserva
    
   } = require("../controllers/reserva.controllers");
 
@@ -45,8 +46,8 @@ router.post("/api/reserva", crearReserva);
 // // Actualizar una reserva
 // router.put("/api/reserva/:id", actualizarReserva);
  
-// // Eliminar una reserva de forma lógica
-// router.delete("/api/reserva/:id", eliminarReserva);
+// Eliminar una reserva de forma lógica
+router.delete("/api/reserva/:id", eliminarReserva);
 
  
  module.exports = router;
