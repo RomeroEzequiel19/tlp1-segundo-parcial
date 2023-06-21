@@ -56,6 +56,6 @@ const Reserva = sequelize.define('Reserva', {
 });
 
 // Crear tabla si no existe
-Reserva.sync();
+//Reserva.sync();
 
 module.exports = Reserva;
