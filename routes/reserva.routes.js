@@ -7,6 +7,8 @@ const router = require('express').Router();
 //         Rutas para renderizar vistas
 // ==========================================
 
+
+
 // Obtener todas las reservas
 
 // Formulario para crear una reserva
@@ -17,8 +19,11 @@ const router = require('express').Router();
 //         Rutas para CRUD de reservas
 // ==========================================
 
+router.get('/',(req,res)=>{
+    res.render('index')
+});
 // Obtener todas las reservas
-router.get('/api/',);
+
  
 // Crear una reserva
 router.post('/api/',);

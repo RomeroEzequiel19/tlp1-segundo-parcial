@@ -19,6 +19,7 @@ sequelize.authenticate()
 
 require('ejs');
 
+app.set('view engine', 'ejs');
 
 // Middlewares
 // TODO: Implementar middlewares
