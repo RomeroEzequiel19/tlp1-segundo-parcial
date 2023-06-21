@@ -33,6 +33,11 @@ const Reserva = sequelize.define('Reserva', {
         allowNull: false,
         defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
+    createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
     updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
