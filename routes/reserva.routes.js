@@ -5,7 +5,8 @@ const router = require('express').Router();
 const {
     obtenerReservas,
     crearReserva,
-    eliminarReserva
+    eliminarReserva,
+    obtenerReserva
    
   } = require("../controllers/reserva.controllers");
 
@@ -37,8 +38,8 @@ router.get("/reserva/editar/:id", (req, res) => {
 // Obtener todas las reservas
 router.get("/api/reserva", obtenerReservas);
 
-// //Obtener una reserva
-// router.get("/api/reserva/:id", obtenerReserva);
+//Obtener una reserva
+router.get("/api/reserva/:id", obtenerReserva);
  
 // Crear una reserva
 router.post("/api/reserva", crearReserva);

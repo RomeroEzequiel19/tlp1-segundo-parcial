@@ -29,7 +29,31 @@ ctrlReservas.obtenerReservas = async (req, res) => {
     }
   };
 // Obtener una reserva
-
+ctrlReservas.obtenerReserva = async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      const Reservas = await Reserva.findOne({
+        where: {
+          id:id
+        },
+      });
+  
+      if (!Personas) {
+        throw {
+          status: 404,
+          message: "No existe la Personas",
+        };
+      }
+  
+      return res.json(Reservas);
+    } catch (error) {
+      return res
+        .status(error.status || 500)
+        .json(error.message || "Error interno del servidor");
+    }
+  };
+  
 // Crear una reserva
 ctrlReservas.crearReserva = async (req, res) => {
     const {
